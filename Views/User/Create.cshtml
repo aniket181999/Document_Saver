@@ -1,0 +1,58 @@
+﻿@model User
+
+<link rel="stylesheet" href="~/css/StyleSheet.css">
+<body>
+
+
+<form method="post" asp-controller="User" asp-action="Create">
+    <div class="border p-3 mt-4">    
+        <div class="row pb-4">
+            <h2 class="text-primary">
+                Register
+            </h2>
+            <hr />
+            </div>
+
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="mb-3">
+               <label asp-for="User_Name"></label>
+                  <input asp-for="User_Name" class="form-control"/>
+                  <span asp-validation-for="User_Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+               <label asp-for="User_Email"></label>
+                <input asp-for="User_Email" class="form-control"/>
+                <span asp-validation-for="User_Email" class="text-danger"></span>
+
+            </div>
+            <div class="mb-3">
+               <label asp-for="User_Password"></label>
+                <input asp-for="User_Password" class="form-control"/>
+                <span asp-validation-for="User_Password" class="text-danger"></span>
+
+            </div>
+            <div class="mb-3">
+               <label asp-for="User_Phone"></label>
+                <input asp-for="User_Phone" class="form-control"/>
+                <span asp-validation-for="User_Phone" class="text-danger"></span>
+
+            </div>
+            <div class="mb-3">
+               <label asp-for="User_Emp_Id"></label>
+                <input asp-for="User_Emp_Id" class="form-control"/>
+                <span asp-validation-for="User_Emp_Id" class="text-danger"></span>
+
+            </div>
+            <button class="btn btn-primary" type="submit" style="width:150px">Create</button>
+            <a asp-controller="User" asp-action="Login"  class="btn btn-secondary" style="width:150px">Back To List</a>
+
+        </div>
+
+</form>
+</body>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}
+
